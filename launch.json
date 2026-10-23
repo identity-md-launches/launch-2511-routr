@@ -1,0 +1,24 @@
+{
+  "kind": "custom_token",
+  "token": {
+    "contract": "RoutrToken",
+    "name": "routr",
+    "symbol": "ROUTR",
+    "decimals": 18,
+    "constructorArgs": [],
+    "totalSupply": "1000000000000000000000000000"
+  },
+  "contracts": [],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "economics": {
+    "poolBps": 8800,
+    "initialMarketCapWei": "2500000000000000000000",
+    "remainderTo": "0x1ee3ffadfe138415a2ddaedeebe5f46616fa413d"
+  },
+  "notes": "RoutrToken (src/RoutrToken.sol) is a fixed-supply OpenZeppelin v5 ERC-20 named routr with symbol ROUTR and 18 decimals. Its constructor takes no arguments and mints the whole supply of 1,000,000,000 ROUTR (1000000000000000000000000000 minor units) once to msg.sender, which on this launch is the ProjectFactory; the factory then forwards the swarm share to the launch's MerkleDistributor, seeds the pool and sends the remainder to economics.remainderTo. The token has no owner, minter, pause, blocklist, freeze, fee or burn: transfers move exactly the amount requested, totalSupply can never grow, and no privileged call can move or freeze a holder's balance. There are no application contracts and no initialization calls. The pool pairs with IMD at the launch policy's 1.25% fee and tick spacing 60; initialPrice is provenance only, the deployer derives the opening price from economics.initialMarketCapWei and totalSupply."
+}
